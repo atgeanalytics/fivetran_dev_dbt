@@ -1,0 +1,6 @@
+packages:
+  - package: fivetran/linkedin_source
+    version: 0.2.1
+packages:
+  - package: fivetran/linkedin
+    version: 0.2.1
