@@ -12,11 +12,13 @@ profile: 'fivetran'
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-source-paths: ["models"]
+# source-paths: ["dbt_modules/linkedin/models" "dbt_modules/linkedin_source/models"]
+
+source-paths: ["dbt_modules/linkedin/models"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
 data-paths: ["data"]
-macro-paths: ["macros"]
+macro-paths: ["dbt_modules/linkedin/macros dbt_modules/linkedin_source/macros"]
 snapshot-paths: ["snapshots"]
 
 target-path: "target"  # directory which will store compiled SQL files
@@ -36,6 +38,3 @@ models:
       # Applies to all files under models/example/
       example:
           materialized: view
-
-vars:
-    linkedin_schema: cu_sfdc_poc
